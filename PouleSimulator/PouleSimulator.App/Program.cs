@@ -1,12 +1,19 @@
-﻿using System;
+﻿using PouleSimulator.App.Menus;
 
 namespace PouleSimulator.App
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MainMenu mainMenu = new MainMenu();
+            int userInput = 0;
+
+            while (userInput != 5)
+            {
+                userInput = mainMenu.Display();
+                mainMenu.NavigateTo(userInput);
+            }
         }
     }
 }
